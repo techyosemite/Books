@@ -1,0 +1,47 @@
+//Implement Stack using ArrayList
+
+class StackUsingArrayList<T> {
+
+  private int size;
+
+  private int currentIndex;
+
+  private ArrayList<T> arrayList;
+
+  StackUsingArrayList(int size){
+
+    this.arrayList = new ArrayList<T>(size);
+
+    this.currentIndex = -1;
+
+    this.size  = size;
+
+  }
+
+  public void add(T obj) throws Exception{
+    if(this.arrayList.size == this.size)
+      return new Exception("Size full!! ");
+
+      this.arrayList.add(currentIndex + 1, obj);
+
+      currentIndex+=1;
+  }
+
+  public T remove() throws Exception{
+
+    if(currentIndex == -1)
+      throw new Exception("Stack is empty !!");
+
+      T obj = arrayList.remove(currentIndex);
+
+      currentIndex-=1;
+
+      retunr obj;
+
+  }
+
+  public int getSize(){
+
+    return currentIndex;
+  }
+}
